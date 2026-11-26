@@ -1,0 +1,60 @@
+:root {
+  --verde-oscuro: #0f3d3a;
+  --verde-panel: #1f4e49;
+  --menta: #b2ead3;
+  --menta-suave: #c3e8d6;
+  --azul-panel: #c9ddf0;
+  --fondo: #dde8ec;
+  --texto: #103b37;
+  --texto-suave: #5b7370;
+  --borde: #c4d3d6;
+  --radio: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+html {
+  font-size: clamp(16px, 0.35vw + 11px, 22px);
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Cada página nueva entra con un fundido */
+main.pagina > :not(router-outlet) {
+  display: block;
+  animation: aparecer 0.4s ease both;
+}
+
+/* Respeta a quien tiene desactivadas las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

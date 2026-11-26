@@ -1,0 +1,80 @@
+.resumen {
+  padding: 1.75rem;
+  color: #fff;
+  background: var(--verde-panel);
+  border-radius: var(--radio);
+}
+
+h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+}
+
+.etiqueta {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #9cc4bc;
+}
+
+.sala {
+  margin: 0.4rem 0 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem 1rem;
+  margin: 0 0 1.75rem;
+  font-size: 1rem;
+}
+
+dt {
+  color: #9cc4bc;
+}
+
+dd {
+  margin: 0;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+.confirmar {
+  width: 100%;
+  padding: 0.95rem;
+  font: inherit;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+  background: var(--menta);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.confirmar:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.exito {
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--menta);
+}
+
+.exito a {
+  display: block;
+  margin-top: 0.25rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.resumen {
+  animation: subir 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s both;
+}

@@ -1,0 +1,18 @@
+<app-page-header
+  etiqueta="TU ESPACIO DE TRABAJO"
+  titulo="Cancelar reserva"
+  subtitulo="Elige la reserva que quieres anular. La sala quedará libre de nuevo."
+/>
+
+@if (cancelada()) {
+  <p class="exito">Reserva cancelada correctamente.</p>
+}
+
+@if (reservas().length > 0) {
+  <app-booking-list [reservas]="reservas()" [cancelable]="true" (cancelar)="cancelar($event)" />
+} @else {
+  <div class="vacio">
+    <p>No hay reservas que cancelar.</p>
+    <a routerLink="/nueva-reserva">Hacer una reserva</a>
+  </div>
+}

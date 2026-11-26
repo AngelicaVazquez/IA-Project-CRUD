@@ -1,0 +1,32 @@
+<section>
+  <h2>2. Elige tu sala</h2>
+
+  @if (store.fechaValida()) {
+    <p class="sub">
+      {{ store.salasDisponibles().length }}
+      {{ store.salasDisponibles().length === 1 ? 'sala disponible' : 'salas disponibles' }}
+      para tu horario
+    </p>
+  } @else {
+    <p class="sub">Elige una fecha válida para ver las salas.</p>
+  }
+
+  <div class="lista">
+    @for (sala of store.salasDisponibles(); track sala.id) {
+      <button
+        type="button"
+        class="sala"
+        [class.sala--activa]="store.salaId() === sala.id"
+        [attr.aria-pressed]="store.salaId() === sala.id"
+        (click)="store.salaId.set(sala.id)"
+      >
+        <span class="sala__radio"></span>
+        <span class="sala__nombre">{{ sala.nombre }}</span>
+      </button>
+    } @empty {
+      @if (store.fechaValida()) {
+        <p class="vacio">No hay salas libres en ese horario. Prueba con otra hora u otro día.</p>
+      }
+    }
+  </div>
+</section>

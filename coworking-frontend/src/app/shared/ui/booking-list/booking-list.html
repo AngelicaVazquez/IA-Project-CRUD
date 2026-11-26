@@ -1,0 +1,28 @@
+<ul class="lista">
+  @for (item of items(); track item.id) {
+    <li class="tarjeta">
+      <div class="tarjeta__sala">{{ item.sala }}</div>
+
+      <div class="tarjeta__datos">
+        <p class="fecha">{{ item.fecha }}</p>
+        <p class="detalle">{{ item.horario }} · {{ item.duracion }}</p>
+      </div>
+
+      @if (cancelable()) {
+        <div class="tarjeta__acciones">
+          @if (confirmandoId() === item.id) {
+            <span class="pregunta">¿Cancelar esta reserva?</span>
+            <button type="button" class="btn btn--peligro" (click)="confirmarCancelacion(item.id)">
+              Sí, cancelar
+            </button>
+            <button type="button" class="btn btn--neutro" (click)="descartar()">No</button>
+          } @else {
+            <button type="button" class="btn btn--borde" (click)="pedirConfirmacion(item.id)">
+              Cancelar
+            </button>
+          }
+        </div>
+      }
+    </li>
+  }
+</ul>

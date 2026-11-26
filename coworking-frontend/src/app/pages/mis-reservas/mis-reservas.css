@@ -1,0 +1,22 @@
+.vacio {
+  padding: 2rem;
+  text-align: center;
+  background: #eaf1f3;
+  border: 1px dashed var(--borde);
+  border-radius: var(--radio);
+}
+
+.vacio p {
+  margin: 0 0 0.75rem;
+  color: var(--texto-suave);
+}
+
+.vacio a {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  font-weight: 600;
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  background: var(--menta);
+  border-radius: 8px;
+}

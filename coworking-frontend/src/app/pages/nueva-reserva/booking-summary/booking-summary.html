@@ -1,0 +1,26 @@
+<aside class="resumen">
+  <h2>Tu reserva, de un vistazo</h2>
+
+  <p class="etiqueta">SALA SELECCIONADA</p>
+  <p class="sala">{{ store.salaSeleccionada()?.nombre ?? 'Sin elegir' }}</p>
+
+  <dl>
+    <dt>Fecha</dt>
+    <dd>{{ fechaTexto() }}</dd>
+    <dt>Horario</dt>
+    <dd>{{ horario() }}</dd>
+    <dt>Duración</dt>
+    <dd>{{ store.duracion() }} {{ store.duracion() === 1 ? 'hora' : 'horas' }}</dd>
+  </dl>
+
+  <button type="button" class="confirmar" [disabled]="!store.puedeConfirmar()" (click)="confirmar()">
+    Confirmar reserva →
+  </button>
+
+  @if (confirmada()) {
+    <p class="exito">
+      ¡Reserva confirmada!
+      <a routerLink="/mis-reservas">Ver mis reservas</a>
+    </p>
+  }
+</aside>

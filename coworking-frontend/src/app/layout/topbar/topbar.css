@@ -1,0 +1,39 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 2.5rem;
+  background: #cfdfe2;
+}
+
+.migas,
+.fecha {
+  margin: 0;
+}
+
+.migas__raiz {
+  color: var(--texto-suave);
+  margin-right: 0.35rem;
+}
+
+.fecha {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.fecha::first-letter {
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+}
+
+.migas__titulo {
+  display: inline-block;
+  animation: subir 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}

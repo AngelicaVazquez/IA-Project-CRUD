@@ -1,0 +1,14 @@
+<app-page-header
+  etiqueta="TU ESPACIO DE TRABAJO"
+  titulo="Mis reservas"
+  subtitulo="Todas las reservas de salas hechas hasta ahora."
+/>
+
+@if (reservas().length > 0) {
+  <app-booking-list [reservas]="reservas()" />
+} @else {
+  <div class="vacio">
+    <p>Todavía no hay ninguna reserva.</p>
+    <a routerLink="/nueva-reserva">Hacer una reserva</a>
+  </div>
+}

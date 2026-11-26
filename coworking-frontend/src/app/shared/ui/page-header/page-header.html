@@ -1,0 +1,9 @@
+<header class="cabecera">
+  @if (etiqueta()) {
+    <p class="cabecera__etiqueta">{{ etiqueta() }}</p>
+  }
+  <h1>{{ titulo() }}</h1>
+  @if (subtitulo()) {
+    <p class="cabecera__sub">{{ subtitulo() }}</p>
+  }
+</header>

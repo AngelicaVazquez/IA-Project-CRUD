@@ -1,0 +1,11 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: 1fr 22.5rem;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 1000px) {
+  .rejilla {
+    grid-template-columns: 1fr;
+  }
+}

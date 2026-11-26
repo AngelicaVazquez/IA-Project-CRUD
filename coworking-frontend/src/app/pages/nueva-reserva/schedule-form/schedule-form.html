@@ -1,0 +1,34 @@
+<section class="panel">
+  <h2>1. ¿Cuándo nos vemos?</h2>
+
+  <div class="campos">
+    <label class="campo campo--fecha">
+      <span>Fecha</span>
+      <input type="date" [min]="store.hoy" [value]="store.fecha()" (input)="cambiarFecha($event)" />
+    </label>
+
+    <label class="campo">
+      <span>Desde</span>
+      <select (change)="cambiarInicio($event)">
+        @for (f of store.franjas(); track f.id) {
+          <option [value]="f.id" [selected]="f.id === store.franjaInicioId()">{{ f.horaInicio }}</option>
+        }
+      </select>
+    </label>
+
+    <label class="campo">
+      <span>Hasta</span>
+      <select (change)="cambiarFin($event)">
+        @for (f of store.franjasFin(); track f.id) {
+          <option [value]="f.id" [selected]="f.id === store.franjaFinId()">{{ f.horaFin }}</option>
+        }
+      </select>
+    </label>
+  </div>
+
+  @if (!store.fechaValida()) {
+    <p class="aviso">Elige una fecha de hoy en adelante.</p>
+  } @else {
+    <p class="nota">Horario de apertura: 08:00 – 20:00 · Todas las horas son locales.</p>
+  }
+</section>

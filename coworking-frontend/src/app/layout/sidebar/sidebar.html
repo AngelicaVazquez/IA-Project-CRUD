@@ -1,0 +1,49 @@
+<aside class="sidebar">
+  <div class="logo">
+    <span class="logo__nombre">nido</span>
+    <span class="logo__sub">COWORKING</span>
+  </div>
+
+  <p class="etiqueta">TU ESPACIO DE TRABAJO</p>
+
+  <nav aria-label="Navegación principal">
+    @for (enlace of enlaces; track enlace.ruta) {
+      <a [routerLink]="enlace.ruta" routerLinkActive="activo" class="enlace">
+        <svg
+          class="enlace__icono"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          @switch (enlace.icono) {
+            @case ('calendario') {
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M3 10h18" />
+              <path d="m9 16 2 2 4-4" />
+            }
+            @case ('mas') {
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8" />
+              <path d="M12 8v8" />
+            }
+            @case ('cancelar') {
+              <path d="M8 2v4" />
+              <path d="M16 2v4" />
+              <rect width="18" height="18" x="3" y="4" rx="2" />
+              <path d="M3 10h18" />
+              <path d="m14 14-4 4" />
+              <path d="m10 14 4 4" />
+            }
+          }
+        </svg>
+        <span class="enlace__texto">{{ enlace.texto }}</span>
+      </a>
+    }
+  </nav>
+</aside>

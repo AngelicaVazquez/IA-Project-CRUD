@@ -1,0 +1,63 @@
+.panel {
+  padding: 1.5rem;
+  background: var(--azul-panel);
+  border: 1px solid #b6cde3;
+  border-radius: var(--radio);
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.25rem;
+}
+
+.campos {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+input,
+select {
+  padding: 0.75rem;
+  font: inherit;
+  color: var(--texto);
+  background: #f3f8fb;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+}
+
+.nota,
+.aviso {
+  margin: 1.25rem 0 0;
+  font-size: 0.88rem;
+}
+
+.nota {
+  color: var(--texto-suave);
+}
+
+.aviso {
+  color: #a33b3b;
+  font-weight: 600;
+}
+@media (max-width: 600px) {
+  .campos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campo--fecha {
+    grid-column: 1 / -1;
+  }
+}
+
+.panel {
+  animation: subir 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.2s both;
+}
